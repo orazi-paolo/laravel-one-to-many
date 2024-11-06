@@ -23,6 +23,16 @@
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $project->name) }}">
         </div>
         <div class="mb-3">
+            <label for="type_id" class="form-label">Type</label>
+            <select name="type_id" id="type_id" class="form-control">
+                @foreach ($types as $type)
+                <option value="{{ $type->id }}">
+                    {{ $type->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <input type="text" class="form-control" id="description" name="description"
                 value="{{ old('description', $project->description) }}">
