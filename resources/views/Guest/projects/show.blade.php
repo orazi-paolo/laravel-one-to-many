@@ -17,6 +17,6 @@
         </div>
     </div>
 
-    <a href="{{ route('admin.projects.index')}}" class="btn btn-primary">Back to list</a>
+    <a href="{{ route('guest.projects.index')}}" class="btn btn-primary">Back to list</a>
 </div>
 @endsection

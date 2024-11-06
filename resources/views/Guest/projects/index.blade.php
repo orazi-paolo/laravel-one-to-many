@@ -28,9 +28,3 @@
     </table>
 </div>
 @endsection
-
-@section('additional-script')
-<script>
-    @vite('resources/js/delete-project.js')
-</script>
-@endsection
