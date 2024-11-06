@@ -26,6 +26,7 @@
                 </li>
                 <li>
                     @auth
+                    <a class="nav-link" href="{{ route('admin.types.index') }}">Types</a>
                     @else
                         <a class="nav-link" href="{{ route('guest.types.index') }}">Types</a>
                     @endauth
