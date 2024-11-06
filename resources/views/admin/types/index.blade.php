@@ -22,7 +22,7 @@
                     <form action="{{ route('admin.types.destroy', $type->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm delete-button"
+                        <button type="submit" class="btn btn-danger btn-sm delete-type"
                             data-type-name="{{ $type->name }}">Delete</button>
                     </form>
                 </td>
