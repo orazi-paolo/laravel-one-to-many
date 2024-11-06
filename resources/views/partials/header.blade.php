@@ -24,6 +24,12 @@
                         <a class="nav-link" href="{{ route('guest.projects.index') }}">Projects</a>
                     @endauth
                 </li>
+                <li>
+                    @auth
+                    @else
+                        <a class="nav-link" href="{{ route('guest.types.index') }}">Types</a>
+                    @endauth
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
