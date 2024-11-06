@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAndUpdateTypeRequest;
 
 class TypeController extends Controller
 {
@@ -22,15 +23,18 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        $type = new Type();
+        return view('admin.types.create', compact('type'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAndUpdateTypeRequest $request)
     {
-
+        $data = $request->validated();
+        Type::create($data);
+        return redirect()->route('admin.types.index');
     }
 
     /**
