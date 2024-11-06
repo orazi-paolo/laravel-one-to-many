@@ -11,6 +11,7 @@
         <div class="card-body">
             <p><strong>ID:</strong> {{ $project->id }}</p>
             <p><strong>Name:</strong> {{ $project->name }}</p>
+            <p><strong>Type:</strong> {{ $project->type->name }}</p>
             <p><strong>Description:</strong> {{ $project->description }}</p>
             <p><strong>Url:</strong> <a href="{{ $project->url }}">{{ $project->url }}</a></p>
         </div>
