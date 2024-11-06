@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
-use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\TypeController as GuestTypeController;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', [GuestProjectController::class, 'index']);
 
 Route::name('guest.')->group(function () {
     Route::resource('projects', GuestProjectController::class)->only(['index', 'show']);
+    Route::resource('types', GuestTypeController::class)->only(['index', 'show']);
 });
 
 
