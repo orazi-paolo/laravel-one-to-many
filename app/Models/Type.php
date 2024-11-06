@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Type extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name'
+    ];
 
     // definisco il rapporto uno a molti con i projects
     public function projects()
