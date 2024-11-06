@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\TypeController as GuestTypeController;
+use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 
@@ -29,4 +30,5 @@ Auth::routes();
 
 Route::middleware('auth')->name('admin.')->prefix('admin')->group(function () {
     Route::resource('projects', AdminProjectController::class);
+    Route::resource('types', AdminTypeController::class);
 });
