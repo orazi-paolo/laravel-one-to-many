@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Type;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAndUpdateTypeRequest;
 
@@ -48,17 +47,19 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Type $type)
     {
-        //
+        return view('admin.types.edit', compact('type'));
     }
-
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreAndUpdateTypeRequest $request, Type $type)
     {
-        //
+
+        $data = $request->validated();
+        $type->update($data);
+        return redirect()->route('admin.types.index');
     }
 
     /**
